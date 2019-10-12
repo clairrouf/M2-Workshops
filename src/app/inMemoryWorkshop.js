@@ -33,7 +33,18 @@ function addWorkshop (name, description) {
 
 function removeWorkshopByName (name) {
   return new Promise((resolve, reject) => {
-    reject(new Error('Not implemented'))
+    if (!name) {
+      reject(new Error('Workshop name required'))
+    }
+
+    for (let i = 0; i < inMemoryWorkshop.length; ++i) {
+
+      if (inMemoryWorkshop[i].name === name) {
+        inMemoryWorkshop.splice(i,1)
+        break;
+      }
+    }
+    resolve()
   })
 }
 
@@ -47,6 +58,7 @@ function updateWorkshop (oldName, newName) {
 
       if (inMemoryWorkshop[i].name === oldName) {
         inMemoryWorkshop[i].name = newName
+        break;
       }
     }
     resolve()
