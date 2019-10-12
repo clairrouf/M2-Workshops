@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./head %>
+</head>
+<body class="container">
+
+<form action="/update-workshop" method="post">
+    <div class="form-group">
+        <input type="hidden" name="name" class="form-control" id="name" value="<%= workshopName %>"  placeholder="Workshop Name" required>
+
+        <label for="name">New Name</label>
+        <input type="text" name="newName" class="form-control" id="newName"  placeholder="Workshop Name" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a type="button" class="btn btn-secondary" href="/">Cancel</a>
+</form>
+
+<footer>
+    <% include ./footer %>
+</footer>
+
+</body>
+</html>
